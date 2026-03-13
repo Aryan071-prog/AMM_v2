@@ -1,0 +1,37 @@
+# Dependencies
+node_modules/
+
+# Hardhat
+cache/
+artifacts/
+
+# Testing
+coverage/
+coverage.json
+
+# Environment variables
+.env
+.env.local
+
+# Build
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+npm-debug.log*
+
+# TypeChain
+typechain/
+types/
