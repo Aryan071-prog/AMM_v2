@@ -27,9 +27,6 @@ async function main() {
 
   console.log("✅ Contracts deployed");
 
-  // Set router in factory
-  await factory.setRouter(await router.getAddress());
-
   // Create pair
   await factory.createPair(await tokenA.getAddress(), await tokenB.getAddress());
   const pairAddress = await factory.getPair(await tokenA.getAddress(), await tokenB.getAddress());

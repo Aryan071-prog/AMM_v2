@@ -43,10 +43,6 @@ async function main() {
   await router.waitForDeployment();
   console.log("  ✅ Router:", await router.getAddress());
 
-  console.log("\n  Setting Router in Factory...");
-  await (await factory.setRouter(await router.getAddress())).wait();
-  console.log("  ✅ Router configured");
-
   console.log("\n  Creating TokenA/TokenB Pair...");
   await (await factory.createPair(await tokenA.getAddress(), await tokenB.getAddress())).wait();
   const pairAddress = await factory.getPair(await tokenA.getAddress(), await tokenB.getAddress());

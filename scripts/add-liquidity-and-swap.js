@@ -39,9 +39,6 @@ async function main() {
   const routerAddress = await router.getAddress();
   console.log("Router deployed:", routerAddress);
 
-  // Set Router in Factory
-  await (await factory.setRouter(routerAddress)).wait();
-
   // Create Pair
   await (await factory.createPair(tokenAAddress, tokenBAddress)).wait();
   const pairAddress = await factory.getPair(tokenAAddress, tokenBAddress);

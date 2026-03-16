@@ -6,7 +6,6 @@ import "./Pair.sol";
 
 contract Factory {
     address public owner;
-    address public router;
 
     // All pairs created
     address[] public allPairs;
@@ -21,7 +20,6 @@ contract Factory {
         address pair,
         uint256 pairCount
     );
-    event RouterSet(address indexed router);
     event OwnerChanged(address indexed newOwner);
 
     constructor() {
@@ -65,13 +63,6 @@ contract Factory {
         return allPairs.length;
     }
 
-    
-    function setRouter(address _router) external onlyOwner {
-        router = _router;
-        emit RouterSet(_router);
-    }
-
-    
     function transferOwnership(address newOwner) external onlyOwner {
         require(newOwner != address(0), "Zero address");
         owner = newOwner;
